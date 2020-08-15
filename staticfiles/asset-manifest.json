@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.98400a1b.chunk.css",
+    "main.js": "/static/js/main.a722207d.chunk.js",
+    "main.js.map": "/static/js/main.a722207d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9c5e35a6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9c5e35a6.js.map",
+    "static/js/2.392c9753.chunk.js": "/static/js/2.392c9753.chunk.js",
+    "static/js/2.392c9753.chunk.js.map": "/static/js/2.392c9753.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.3da6e53fa04ee39ce79a216e41da60c1.js": "/precache-manifest.3da6e53fa04ee39ce79a216e41da60c1.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.98400a1b.chunk.css.map": "/static/css/main.98400a1b.chunk.css.map",
+    "static/js/2.392c9753.chunk.js.LICENSE.txt": "/static/js/2.392c9753.chunk.js.LICENSE.txt",
+    "static/media/Landing.css": "/static/media/Group 294.e30008db.png",
+    "static/media/Quest_FF-04@2x.png": "/static/media/Quest_FF-04@2x.7d33844d.png",
+    "static/media/Dashboard.css": "/static/media/null.e90962a1.png",
+    "static/media/our_way.png": "/static/media/our_way.81f16f97.png",
+    "static/media/our_way2.png": "/static/media/our_way2.54249f57.png",
+    "static/media/testimonial_count.png": "/static/media/testimonial_count.01e0fa7d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c5e35a6.js",
+    "static/js/2.392c9753.chunk.js",
+    "static/css/main.98400a1b.chunk.css",
+    "static/js/main.a722207d.chunk.js"
+  ]
+}
