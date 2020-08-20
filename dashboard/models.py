@@ -81,6 +81,9 @@ class Material(models.Model):
     material_type = models.CharField(max_length=20, choices=(('PNG', 'PNG'),('PDF', 'PDF'),('PPT', 'PPT')))
     file = models.FileField(upload_to='materials/files')
 
+    class Meta:
+        ordering = ['-pk']
+
     def __str__(self):
         return self.title
 
