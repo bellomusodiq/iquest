@@ -91,4 +91,4 @@ class ScheduleCall(models.Model):
     call_time = models.ForeignKey(CallTime, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return self.phone_no + ' ' + self.call_time
+        return self.phone_no + ' ' + self.call_time.title
