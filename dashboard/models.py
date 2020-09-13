@@ -52,7 +52,10 @@ class PhaseContent(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.phase + ' ' + str(self.pk)
+        return 'phase: {}, id: {}, title: {}'.format(self.phase, str(self.pk), self.title)
+
+    class Meta:
+        ordering = ['pk']
 
 
 class UserDashboard(models.Model):
