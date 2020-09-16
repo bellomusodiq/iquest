@@ -26,7 +26,7 @@ from home_template.views import (
     CallTimeViewSet
 )
 
-from accounts.views import UserCreateView
+from accounts.views import UserCreateView, CreateStripeSession
 
 from dashboard.views import DashboardView, UserDashboardView, PhaseView, TrainingView, \
     MaterialViewSet
@@ -52,6 +52,7 @@ urlpatterns = [
     path('api/user-create/', UserCreateView.as_view()),
     path('api/user-create/<int:pk>/', UserCreateView.as_view()),
     path('api/login/', obtain_jwt_token),
+    path('create-session/', CreateStripeSession.as_view())
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
