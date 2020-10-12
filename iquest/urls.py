@@ -26,7 +26,8 @@ from home_template.views import (
     CallTimeViewSet
 )
 
-from accounts.views import UserCreateView, CreateStripeSession
+from accounts.views import UserCreateView, CreateStripeSession, PlanViewSet, \
+    PlanItemViewSet, UserPlanViewSet, VerifyPayment
 
 from dashboard.views import DashboardView, UserDashboardView, PhaseView, TrainingView, \
     MaterialViewSet
@@ -37,6 +38,9 @@ router = DefaultRouter()
 router.register('schedule-call', ScheduleCallViewSet, 'schedule-call')
 router.register('call-time', CallTimeViewSet, 'call-time')
 router.register('materials', MaterialViewSet, 'materials')
+router.register('plans', PlanViewSet, 'plans')
+router.register('plan-items', PlanItemViewSet, 'plan-items')
+router.register('user-plan', UserPlanViewSet, 'user-plan')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -52,7 +56,8 @@ urlpatterns = [
     path('api/user-create/', UserCreateView.as_view()),
     path('api/user-create/<int:pk>/', UserCreateView.as_view()),
     path('api/login/', obtain_jwt_token),
-    path('create-session/', CreateStripeSession.as_view())
+    path('api/create-session/<int:pk>/', CreateStripeSession.as_view()),
+    path('api/verify-payment/', VerifyPayment.as_view())
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from .models import PlanItem, Plan, UserPlan, PlanEmail
 
 
 class UserCreateSerializer(serializers.Serializer):
@@ -46,3 +47,39 @@ class UserCreateSerializer(serializers.Serializer):
         instance.save()
 
         return instance
+
+
+class PlanSerializer(serializers.ModelSerializer):
+
+    plan_items = serializers.SerializerMethodField()
+
+    class Meta:
+        fields = '__all__'
+        model = Plan
+
+    def get_plan_items(self, obj):
+        items = []
+        for item in obj.planitem_set.all():
+            items.append(PlanItemSerializer(item).data)
+        return items
+
+
+class PlanItemSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        fields = '__all__'
+        model = PlanItem
+
+
+class UserPlanSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        fields = '__all__'
+        model = UserPlan
+
+
+class PlanEmailSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        fields = '__all__'
+        model = PlanEmail
